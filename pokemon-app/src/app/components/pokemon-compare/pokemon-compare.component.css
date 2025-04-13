@@ -1,0 +1,77 @@
+.compare-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 40px;
+  flex-wrap: wrap;
+}
+
+.compare-box {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  width: 320px;
+  text-align: center;
+}
+
+.compare-box img {
+  width: 120px;
+  margin: 16px 0;
+}
+
+table {
+  margin: 0 auto;
+  width: 100%;
+  border-spacing: 8px;
+}
+
+td {
+  font-size: 16px;
+  text-align: left;
+}
+
+.stat-value {
+  font-weight: bold;
+  text-align: right;
+  color: #1a202c;
+}
+
+.total {
+  margin-top: 12px;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.result-message {
+  margin-top: 40px;
+  text-align: center;
+  font-size: 40px;
+  font-weight: bold;
+  color: #2f855a;
+}
+.winner-border {
+  border: 3px solid #38a169; /* verde */
+}
+
+.loser-border {
+  border: 3px solid #e53e3e; /* vermelho */
+}
+.back-button {
+  margin-top: 24px;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 500;
+  background-color: #3182ce;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.back-button:hover {
+  background-color: #2b6cb0;
+}
+
+

@@ -1,0 +1,57 @@
+<div class="list-container">
+  <div class="search-wrapper">
+    <input
+      type="text"
+      class="search-input"
+      placeholder="Buscar um Pokémon, ex: Pikachu"
+      [(ngModel)]="searchTerm"
+      (input)="filterPokemons()"
+    />
+  </div>
+
+  <div class="card-grid">
+    @for (item of filteredPokemons; track $index) {
+      <mat-card class="poke-card">
+        <mat-card-content
+          class="card-content"
+          [routerLink]="['/pokemon-detail', getPokemonId(item.url)]"
+        >
+          <h3>{{ item.name | titlecase }}</h3>
+          <img
+            [src]="'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/' + getPokemonId(item.url) + '.png'"
+            alt="{{ item.name }}"
+          />
+        </mat-card-content>
+
+        <div class="compare-actions">
+          <!-- Botão de comparar -->
+          <button
+            mat-icon-button
+            (click)="Compare(item); $event.stopPropagation()"
+            [disabled]="!isInCompareList(item) && compareList.length >= 2"
+            title="Comparar"
+          >
+            <mat-icon class="icon-compare">
+              @if (isInCompareList(item)) {
+                compare_arrows
+              } @else {
+                compare
+              }
+            </mat-icon>
+          </button>
+
+          <!-- Botão de favoritos -->
+          <button
+            mat-icon-button
+            (click)="toggleFavorite(item); $event.stopPropagation()"
+            title="Favoritar"
+          >
+            <mat-icon [ngClass]="{ 'favorite-on': isFavorited(item), 'favorite-off': !isFavorited(item) }">
+              {{ isFavorited(item) ? 'favorite' : 'favorite_border' }}
+            </mat-icon>
+          </button>
+        </div>
+      </mat-card>
+    }
+  </div>
+</div>

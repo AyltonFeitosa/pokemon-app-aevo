@@ -1,0 +1,108 @@
+.detail-container {
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 16px;
+}
+
+.detail-card {
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.detail-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  align-items: center;
+  justify-content: center;
+}
+
+/* IMAGEM */
+.image-side {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.image-box {
+  background-color: #f7fafc;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: inset 0 0 12px rgba(0, 0, 0, 0.05);
+  margin-bottom: 12px;
+}
+
+.pokemon-image {
+  width: 160px;
+}
+
+.image-side h2 {
+  font-size: 28px;
+  color: #2d3748;
+  margin: 0;
+  text-transform: capitalize;
+}
+
+/* INFO */
+.info-side {
+  flex: 1;
+  min-width: 260px;
+}
+
+.stats-table {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 16px 0;
+  border-top: 1px solid #edf2f7;
+  border-bottom: 1px solid #edf2f7;
+}
+
+.stats-table li {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #2d3748;
+  border-bottom: 1px solid #edf2f7;
+}
+
+.stats-table li:last-child {
+  border-bottom: none;
+}
+
+.label {
+  font-weight: 500;
+  color: #4a5568;
+}
+
+.value {
+  font-weight: bold;
+  color: #1a202c;
+}
+
+.total-stats {
+  font-size: 18px;
+  margin-bottom: 16px;
+  font-weight: 600;
+  color: #2d3748;
+}
+
+/* BOTÃO */
+.back-button {
+  background-color: #319795;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 24px;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.back-button:hover {
+  background-color: #2c7a7b;
+}

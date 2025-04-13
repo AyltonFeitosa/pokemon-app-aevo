@@ -1,0 +1,50 @@
+<div class="compare-wrapper" *ngIf="pokemon1 && pokemon2">
+    <!-- Pokémon 1 -->
+    <div class="compare-box"
+     [ngClass]="{
+       'winner-border': stats1 > stats2,
+       'loser-border': stats1 < stats2
+     }">
+      <h2>{{ pokemon1.name | titlecase }}</h2>
+      <img [src]="pokemon1.sprites.front_default" alt="{{ pokemon1.name }}" />
+      <table>
+        <tr *ngFor="let stat of pokemon1.stats">
+          <td>{{ stat.stat.name | titlecase }}:</td>
+          <td class="stat-value">{{ stat.base_stat }}</td>
+        </tr>
+      </table>
+      <p class="total">Total de Stats: <strong>{{ stats1 }}</strong></p>
+    </div>
+  
+    <!-- Pokémon 2 -->
+    <div class="compare-box"
+     [ngClass]="{
+       'winner-border': stats2 > stats1,
+       'loser-border': stats2 < stats1
+     }">
+      <h2>{{ pokemon2.name | titlecase }}</h2>
+      <img [src]="pokemon2.sprites.front_default" alt="{{ pokemon2.name }}" />
+      <table>
+        <tr *ngFor="let stat of pokemon2.stats">
+          <td>{{ stat.stat.name | titlecase }}:</td>
+          <td class="stat-value">{{ stat.base_stat }}</td>
+        </tr>
+      </table>
+      <p class="total">Total de Stats: <strong>{{ stats2 }}</strong></p>
+    </div>
+  </div>
+  
+  <!-- Resultado -->
+  <div class="result-message" *ngIf="pokemon1 && pokemon2">
+    <p *ngIf="stats1 > stats2">
+      🏆 <strong>{{ pokemon1.name | titlecase }}</strong> é o vencedor!
+    </p>
+    <p *ngIf="stats2 > stats1">
+      🏆 <strong>{{ pokemon2.name | titlecase }}</strong> é o vencedor!
+    </p>
+    <p *ngIf="stats1 === stats2">
+      🤝 Empate técnico entre os dois Pokémons!
+    </p>
+    <button class="back-button" routerLink="">← Voltar</button>
+  </div>
+  
